@@ -3,7 +3,9 @@ import css from './App.module.css';
 function App() {
   return (
     <div className={css.container}>
-      <div>Project AquaTrack</div>
+      <div>
+        <h1>Project AquaTrack</h1>
+      </div>
     </div>
   );
 }
