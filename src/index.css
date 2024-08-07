@@ -1,5 +1,7 @@
 /* Fonts */
-@import url(./fonts.css);
+/* @import url(./fonts.css); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap rel="stylesheet"'); */
 
 /* Box model */
 html {
@@ -81,7 +83,7 @@ img {
 /* ------------BASE STYLES------------ */
 
 body {
-  font-family: 'Roboto';
+  /* font-family: 'Roboto'; */
   font-weight: 500;
   color: var(--dark);
 }
