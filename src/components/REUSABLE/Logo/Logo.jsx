@@ -3,7 +3,7 @@ import css from './logo.module.css';
 
 const Logo = () => {
   return (
-    <CustomNavLink className={css.homePageLogo} to="/">
+    <CustomNavLink className={css.logo} to="/">
       AquaTrack
     </CustomNavLink>
   );

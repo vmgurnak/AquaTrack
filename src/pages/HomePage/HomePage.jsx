@@ -6,7 +6,7 @@ import Container from '../../components/REUSABLE/Container/Container';
 
 const HomePage = () => {
   return (
-    <Container type="div" addClass={css.homePage}>
+    <Container type="main" addClass={css.homePage}>
       <WelcomeSection />
       <AdvantagesSection />
     </Container>

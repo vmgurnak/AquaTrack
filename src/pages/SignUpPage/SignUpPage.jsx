@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useWindowSize } from 'react-use';
+
 import Container from '../../components/REUSABLE/Container/Container';
 import Logo from '../../components/REUSABLE/Logo/Logo';
 import SignUpForm from '../../components/Users/SignUpForm/SignUpForm';
@@ -6,33 +7,17 @@ import css from './SignUpPage.module.css';
 import AdvantagesSection from '../../components/AdvantagesSection/AdvantagesSection';
 
 const SignUpPage = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 1440);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const { width } = useWindowSize();
 
   return (
-    <Container type="div" addClass={css.signUpPage}>
-      {isMobile ? (
-        <div className={css.signUpContainer}>
+    <Container type="main" addClass={css.signUpPage}>
+      <Container type="section" addClass={css.signUpSection}>
+        <Container type="div" addClass={css.container}>
           <Logo />
           <SignUpForm />
-        </div>
-      ) : (
-        <>
-          <div className={css.signUpContainer}>
-            <Logo />
-            <SignUpForm />
-          </div>
-          <AdvantagesSection />
-        </>
-      )}
+        </Container>
+      </Container>
+      {width >= 1440 ? <AdvantagesSection /> : null}
     </Container>
   );
 };

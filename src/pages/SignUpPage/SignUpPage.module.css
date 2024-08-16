@@ -1,28 +1,38 @@
 .signUpPage {
+  position: relative;
+
   @media (min-width: 1440px) {
     display: flex;
     gap: 32px;
-    /* height: 100vh; */
   }
 }
 
-.signUpContainer {
+.signUpSection {
+}
+
+.container {
   outline: 1px solid red;
   outline-offset: -2px;
 
-  width: 343px;
+  position: relative;
+
+  max-width: 343px;
   height: 780px;
+  padding: 170px 16px;
 
   border-radius: 30px;
   background-color: #f0eff4;
 
   @media (min-width: 768px) {
+    max-width: none;
     width: 704px;
     height: 960px;
+    padding: 227px 134px;
   }
 
   @media (min-width: 1440px) {
     width: 672px;
     height: 736px;
+    padding: 130px 118px;
   }
 }

@@ -9,40 +9,32 @@ import Container from '../REUSABLE/Container/Container.jsx';
 const WelcomeSection = () => {
   // const dispatch = useDispatch();
   return (
-    //Container - переиспользуемый кастомный компонент, добавление классов через addClass
-    //CustomNavLink - переиспользуемый кастомный компонент, добавление классов через addClass
-
-    <section className={css.welcomeSection}>
-      <div type="div" className={css.welcomeSectionContainer}>
+    <Container type="section" addClass={css.WelcomeSection}>
+      <Container type="div" addClass={css.container}>
         <Logo />
-        <div className={''}>
-          <p className={''}>Record daily water intake and track</p>
-          <h1 className={''}>Water consumption tracker</h1>
-          <ul className={''}>
-            <li>
-              <CustomNavLink
-                addClass={clsx('', '', {
-                  // [css.isActive]: isActive,
-                })}
-                to="/signup"
-              >
+        <div className={css.content}>
+          <p className={css.text}>Record daily water intake and track</p>
+          <h1 className={css.title}>Water consumption tracker</h1>
+          <ul className={css.list}>
+            <li className={css.item}>
+              <CustomNavLink addClass={css.linkSignup} to="/signup">
                 Try tracker
               </CustomNavLink>
             </li>
-            <li>
-              <CustomNavLink
-                addClass={clsx('', '', {
-                  // [css.isActive]: isActive,
-                })}
-                to="/signin"
-              >
+            <li className={css.item}>
+              <CustomNavLink addClass={css.linkSignin} to="/signin">
                 Sign In
+              </CustomNavLink>
+            </li>
+            <li className={css.item}>
+              <CustomNavLink addClass={css.linkSignin} to="/tracker">
+                Tracker Page
               </CustomNavLink>
             </li>
           </ul>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Container>
   );
 };
 

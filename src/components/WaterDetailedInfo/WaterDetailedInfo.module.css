@@ -1,0 +1,26 @@
+.WaterDetailedInfo {
+}
+
+.container {
+  position: relative;
+
+  width: 343px;
+  height: 770px;
+  border-radius: 30px;
+  padding: 118px 16px 67px 16px;
+
+  background-color: var(--light-gray);
+
+  @media (min-width: 768px) {
+    max-width: none;
+    width: 704px;
+    height: 738px;
+    padding: 106px 93px 50px 64px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 672px;
+    height: 736px;
+    padding: 188px 61px 188px 64px;
+  }
+}

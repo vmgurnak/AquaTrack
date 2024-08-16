@@ -1,0 +1,40 @@
+.WaterMainInfo {
+}
+
+.container {
+  position: relative;
+
+  width: 343px;
+  height: 415px;
+  border-radius: 30px;
+  padding: 118px 16px 67px 16px;
+
+  background-color: var(--green);
+
+  /* Mobile screen */
+  background-image: url(../../assets/pictures/TrackerPage/bottle_for_water_mobx1_min.png);
+  background-size: 262px 332px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* retina mobile screen */
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../../assets/pictures/TrackerPage/bottle_for_water_mobx2.png');
+  }
+
+  @media (min-width: 768px) {
+    max-width: none;
+    width: 704px;
+    height: 578px;
+    padding: 106px 93px 50px 64px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 672px;
+    height: 736px;
+    padding: 188px 61px 188px 64px;
+  }
+}

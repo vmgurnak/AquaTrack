@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+import clsx from 'clsx';
 
+import Container from '../REUSABLE/Container/Container.jsx';
 import { IMAGES } from '../../components/Constants/constants.js';
 import { requestTotalUsers } from '../../components/utils/requestTotalUsers.js';
 import css from './AdvantagesSection.module.css';
+
 // import useAuth from 'src/hooks/useAuth.js';
 
 const AdvantagesSection = () => {
@@ -23,11 +26,11 @@ const AdvantagesSection = () => {
   }, []);
 
   return (
-    <section className={css.advantagesSection}>
-      <div className={css.advantagesSectionContainer}>
-        <div>
-          <div>
-            <picture>
+    <Container type="section" addClass={css.AdvantagesSection}>
+      <Container type="div" addClass={css.container}>
+        <div className={css.customers}>
+          <div className={css.customersPhoto}>
+            <picture className={css.photo}>
               <source
                 srcSet={`${IMAGES.firstUser1x} 1x, ${IMAGES.firstUser2x} 2x`}
                 media="(min-width: 768px)"
@@ -43,7 +46,7 @@ const AdvantagesSection = () => {
                 height="47"
               />
             </picture>
-            <picture>
+            <picture className={css.photo}>
               <source
                 srcSet={`${IMAGES.secondUser1x} 1x, ${IMAGES.secondUser2x} 2x`}
                 media="(min-width: 768px)"
@@ -59,7 +62,7 @@ const AdvantagesSection = () => {
                 height="47"
               />
             </picture>
-            <picture>
+            <picture className={css.photo}>
               <source
                 srcSet={`${IMAGES.thirdUser1x} 1x, ${IMAGES.thirdUser2x} 2x`}
                 media="(min-width: 768px)"
@@ -76,18 +79,21 @@ const AdvantagesSection = () => {
               />
             </picture>
           </div>
-          <div>
-            Our<span> {totalUsers > 0 ? totalUsers : null} happy</span>{' '}
+          <div className={css.customersText}>
+            Our{' '}
+            <span className={css.customersTextHappy}>
+              {totalUsers > 0 ? totalUsers : null} happy
+            </span>{' '}
             customers
           </div>
         </div>
-        <ul>
-          <li>Habit drive</li>
-          <li>View statistics</li>
-          <li>Personal rate setting</li>
+        <ul className={clsx(css.list, css.benefits)}>
+          <li className={css.benefitsItem}>Habit drive</li>
+          <li className={css.benefitsItem}>View statistics</li>
+          <li className={css.benefitsItem}>Personal rate setting</li>
         </ul>
-      </div>
-    </section>
+      </Container>
+    </Container>
   );
 };
 

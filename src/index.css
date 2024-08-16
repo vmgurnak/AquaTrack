@@ -1,7 +1,8 @@
-/* Fonts */
-/* @import url(./fonts.css); */
+/* local fonts */
+@import url(./fonts.css);
 
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap rel="stylesheet"'); */
+/* remote fonts */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap'); */
 
 /* Box model */
 html {
@@ -39,7 +40,7 @@ a {
   display: block;
 }
 
-button {
+/* button {
   display: block;
   padding: 0;
 
@@ -49,7 +50,7 @@ button {
   border: none;
   outline: none;
   background-color: transparent;
-}
+} */
 
 img {
   display: block;
@@ -67,23 +68,35 @@ img {
 :root {
   /* Color */
 
-  --light-gray: #f6f6f6;
-  --grey: #e8e8e8;
-  --dark-grey: #7e847f;
-  --ligth-blue: #6c8cff;
-  --dark-blue: #404bbf;
+  --white: #fff;
+  --light-gray: #f0eff4;
+  --green: #9be1a0;
+  --hover-green: #87d28d;
+  --light-dark: #323f47;
+  --dark: #2f2f2f;
+  --error-color: #ef5050;
 
-  --dark: #1b1b1b;
+  --input-border-inactive-color: rgba(47, 47, 47, 0.2);
+  --input-border-focused-color: rgba(47, 47, 47, 0.2);
+  --input-border-activated-color: rgba(47, 47, 47, 0.4);
+  --input-text-inactive-color: rgba(47, 47, 47, 0.6);
+
+  --signin-btn-disabled-color: rgba(47, 47, 47, 0.2);
 
   /* Transition*/
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-duration: 250ms;
+  --transition-delay: 250ms;
+  --transition: cubic-bezier(0.14, 0.57, 0.97, 0.39);
 }
 
 /* ------------BASE STYLES------------ */
 
 body {
-  /* font-family: 'Roboto'; */
-  font-weight: 500;
-  color: var(--dark);
+  font-family: 'Poppins', sans-serif;
+  color: var(--light-dark);
+  fill: none;
+  stroke: var(--dark);
+}
+
+svg {
+  display: block;
 }

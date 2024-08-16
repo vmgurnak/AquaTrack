@@ -11,6 +11,8 @@ import secondUser2x from '../../assets/pictures/HomePage/user-second@2x.webp';
 import thirdUser1x from '../../assets/pictures/HomePage/user-third.webp';
 import thirdUser2x from '../../assets/pictures/HomePage/user-third@2x.webp';
 
+import icons from '../../assets/icons/sprite.svg';
+
 const USERS_ENDPOINTS = {
   signUp: '/v1/users/register',
   signIn: '/v1/users/login',
@@ -37,6 +39,19 @@ export const IMAGES = {
   thirdUserMob2x: thirdUserMob2x,
   thirdUser1x: thirdUser1x,
   thirdUser2x: thirdUser2x,
+};
+
+export const ICONS = {
+  icons: icons,
+  eye: `${icons}#eye`,
+  eyeOff: `${icons}#eye-off`,
+  logOut: `${icons}#log-out`,
+  chart: `${icons}#chart`,
+  settings: `${icons}#settings`,
+  trash: `${icons}#trash`,
+  upload: `${icons}#upload`,
+  x: `${icons}#x`,
+  edit: `${icons}#edit`,
 };
 
 const DOMAINS = {
