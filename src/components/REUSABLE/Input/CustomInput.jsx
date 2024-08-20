@@ -21,18 +21,18 @@ const CustomInput = forwardRef(
       onFocus = () => {},
       ...otherProps
     },
-    ref,
+    ref
   ) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isInactive, setIsInactive] = useState(true);
 
-    const handleFocus = e => {
+    const handleFocus = (e) => {
       setIsFocused(true);
       setIsInactive(false);
       if (onFocus) onFocus(e);
     };
 
-    const handleBlur = e => {
+    const handleBlur = (e) => {
       setIsFocused(false);
       setIsInactive(true);
       if (onBlur) onBlur(e);
@@ -54,7 +54,7 @@ const CustomInput = forwardRef(
                     [css.focused]: isFocused,
                     [css.error]: error,
                   },
-                  inputClass,
+                  inputClass
                 )}
                 type={inputType}
                 placeholder={placeHolder}
@@ -81,7 +81,7 @@ const CustomInput = forwardRef(
                   [css.focused]: isFocused,
                   [css.error]: error,
                 },
-                inputClass,
+                inputClass
               )}
               type={inputType}
               placeholder={placeHolder}
@@ -98,7 +98,7 @@ const CustomInput = forwardRef(
         )}
       </>
     );
-  },
+  }
 );
 
 CustomInput.displayName = 'CustomInput';
