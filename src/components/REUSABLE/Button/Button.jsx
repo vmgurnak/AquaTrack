@@ -5,7 +5,7 @@ const Button = ({
   children,
   addClass = '',
   selected = false,
-  disabled = false,
+  disabled = true,
   ariaHidden = false,
   ...otherProps
 }) => {
@@ -17,7 +17,7 @@ const Button = ({
           [css.isSelected]: selected,
           [css.isDisabled]: disabled,
         },
-        addClass,
+        addClass
       )}
       disabled={disabled}
       aria-hidden={ariaHidden}

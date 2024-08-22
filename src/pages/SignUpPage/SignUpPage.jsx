@@ -5,6 +5,7 @@ import Logo from '../../components/REUSABLE/Logo/Logo';
 import SignUpForm from '../../components/Users/SignUpForm/SignUpForm';
 import css from './SignUpPage.module.css';
 import AdvantagesSection from '../../components/AdvantagesSection/AdvantagesSection';
+import CustomNavLink from '../../components/REUSABLE/CustomNavLink/CustomNavLink';
 
 const SignUpPage = () => {
   const { width } = useWindowSize();
@@ -15,6 +16,12 @@ const SignUpPage = () => {
         <Container type="div" addClass={css.container}>
           <Logo />
           <SignUpForm />
+          <p className={css.text}>
+            Already have an account?{' '}
+            <CustomNavLink addClass={css.link} to="/signin">
+              Sign In
+            </CustomNavLink>
+          </p>
         </Container>
       </Container>
       {width >= 1440 ? <AdvantagesSection /> : null}

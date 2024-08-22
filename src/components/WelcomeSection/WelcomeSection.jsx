@@ -26,11 +26,11 @@ const WelcomeSection = () => {
                 Sign In
               </CustomNavLink>
             </li>
-            <li className={css.item}>
+            {/* <li className={css.item}>
               <CustomNavLink addClass={css.linkSignin} to="/tracker">
                 Tracker Page
               </CustomNavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       </Container>

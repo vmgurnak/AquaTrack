@@ -10,7 +10,7 @@
   padding: 16px;
   border-radius: 15px;
   outline: none;
-  background-color: #00000000;
+  background-color: transparent;
 
   font-size: 14px;
   line-height: 1.29;
@@ -31,6 +31,7 @@
 .focused {
   color: var(--dark);
   border: 1px solid var(--input-border-activated-color);
+  background-color: #00000000;
   caret-color: var(--input-text-inactive-color);
 }
 

@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from 'react';
 
 import { ICONS } from '../../Constants/constants.js';
 import Button from '../../REUSABLE/Button/Button.jsx';
@@ -8,12 +9,14 @@ import CustomInput from '../../REUSABLE/Input/CustomInput.jsx';
 import { signUpFormValidation } from '../../Validation/signUpFormValidation.js';
 
 import css from './SignUpForm.module.css';
-import clsx from 'clsx';
+
 const SignUpForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isDirty },
     reset,
   } = useForm({
     mode: 'onChange',
@@ -25,11 +28,15 @@ const SignUpForm = () => {
     reset();
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
-    <Container type="section" addClass={css.signUpForm}>
+    <Container type="div" addClass={css.form}>
       <h2 className={css.title}>SignUp</h2>
 
-      <form onSubmit={handleSubmit(onSubmit)} autoComplete="on">
+      <form onSubmit={handleSubmit(onSubmit)} autoComplete="on" noValidate>
         <CustomInput
           label={true}
           labelName="Email"
@@ -49,7 +56,7 @@ const SignUpForm = () => {
           label={true}
           labelName="Password"
           labelClass={css.label}
-          inputType="password"
+          inputType={showPassword ? 'text' : 'password'}
           inputClass={css.input}
           placeholder="Enter your password"
           error={errors.password ? true : false}
@@ -57,7 +64,11 @@ const SignUpForm = () => {
             onBlur: () => {},
             onFocus: () => {},
           })}
-        />
+        >
+          <svg className={css.eyeIcon} onClick={toggleShowPassword}>
+            <use href={showPassword ? ICONS.eye : ICONS.eyeOff}></use>
+          </svg>
+        </CustomInput>
         {errors.password && (
           <p className={css.error}>{errors.password.message}</p>
         )}
@@ -66,7 +77,7 @@ const SignUpForm = () => {
           label={true}
           labelName="Repeat password"
           labelClass={css.label}
-          inputType="password"
+          inputType={showPassword ? 'text' : 'password'}
           inputClass={css.input}
           placeholder="Repeat password"
           error={errors.repeatPassword ? true : false}
@@ -74,17 +85,14 @@ const SignUpForm = () => {
             onBlur: () => {},
             onFocus: () => {},
           })}
-        />
+        >
+          <svg className={css.eyeIcon} onClick={toggleShowPassword}>
+            <use href={showPassword ? ICONS.eye : ICONS.eyeOff}></use>
+          </svg>
+        </CustomInput>
         {errors.repeatPassword && (
           <p className={css.error}>{errors.repeatPassword.message}</p>
         )}
-
-        <svg className={css.eye} width="20" height="20">
-          <use href={ICONS.eye}></use>
-        </svg>
-        <svg className={css.eye} width="20" height="20">
-          <use href={ICONS.eyeOff}></use>
-        </svg>
 
         {/* <label>
           Password
@@ -102,7 +110,11 @@ const SignUpForm = () => {
           <input type="password" {...register('repeatPassword')} />
           {errors.repeatPassword && <div>{errors.repeatPassword.message}</div>}
         </label> */}
-        <Button addClass={css.signUpBtn} type="submit" disabled={!isValid}>
+        <Button
+          addClass={css.button}
+          type="submit"
+          disabled={!isDirty || !isValid}
+        >
           Sign Up
         </Button>
       </form>
