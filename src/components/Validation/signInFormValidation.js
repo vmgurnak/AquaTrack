@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const signUpFormValidation = Yup.object().shape({
+export const signInFormValidation = Yup.object().shape({
   email: Yup.string()
     .email('Must be a valid email!')
     .required('Email is required!'),
@@ -8,7 +8,4 @@ export const signUpFormValidation = Yup.object().shape({
     .min(8, 'Password must be at least 8 characters!')
     .matches(/[a-zA-Z]/, 'Password must be contain at least one Latin letter.')
     .required('Password is required!'),
-  repeatPassword: Yup.string()
-    .oneOf([Yup.ref('password')], 'Passwords must match')
-    .required('Repeat password is required'),
 });

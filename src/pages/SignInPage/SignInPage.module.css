@@ -4,27 +4,57 @@
   @media (min-width: 1440px) {
     display: flex;
     gap: 32px;
-    /* height: 100vh; */
   }
 }
 
-.signInContainer {
+.signInSection {
+}
+
+.container {
   outline: 1px solid red;
   outline-offset: -2px;
 
-  width: 343px;
+  position: relative;
+
+  max-width: 343px;
   height: 780px;
+  padding: 170px 16px;
 
   border-radius: 30px;
   background-color: #f0eff4;
 
   @media (min-width: 768px) {
+    max-width: none;
     width: 704px;
     height: 960px;
+    padding: 227px 134px;
   }
 
   @media (min-width: 1440px) {
     width: 672px;
     height: 736px;
+    padding: 130px 118px 100px 118px;
   }
+}
+
+.text {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  color: rgba(47, 47, 47, 0.5);
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.link {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--dark);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
 }

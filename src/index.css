@@ -89,6 +89,11 @@ img {
   --transition: cubic-bezier(0.14, 0.57, 0.97, 0.39);
 }
 
+input:-webkit-autofill {
+  /* Стили для автозаполненных полей */
+  -webkit-box-shadow: 0 0 0px 1000px #f0eff4 inset;
+  box-shadow: 0 0 0px 1000px #f0eff4 inset;
+}
 /* ------------BASE STYLES------------ */
 
 body {

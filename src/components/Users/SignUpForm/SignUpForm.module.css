@@ -9,20 +9,39 @@
   font-size: 32px;
   line-height: 1;
   letter-spacing: -0.01em;
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+    line-height: 1.06;
+  }
 }
 
 .label {
   position: relative;
   font-size: 14px;
   line-height: 1.29;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
 .label:not(:first-child) {
   margin-top: 16px;
+
+  @media (min-width: 768px) {
+    margin-top: 20px;
+  }
 }
 
 .input {
   margin-top: 8px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
 .error {
@@ -44,4 +63,11 @@
 .button {
   margin-top: 32px;
   padding: 16px 0;
+
+  @media (min-width: 768px) {
+    padding: 18px 0;
+
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }

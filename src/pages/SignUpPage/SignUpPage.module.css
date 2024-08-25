@@ -33,7 +33,7 @@
   @media (min-width: 1440px) {
     width: 672px;
     height: 736px;
-    padding: 130px 118px;
+    padding: 130px 118px 100px 118px;
   }
 }
 
@@ -44,6 +44,11 @@
   line-height: 1.28;
   letter-spacing: -0.01em;
   color: rgba(47, 47, 47, 0.5);
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
 .link {

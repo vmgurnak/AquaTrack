@@ -33,16 +33,11 @@
   cursor: not-allowed;
 }
 
-/* .isDisabled {
-  color: var(--input-border-inactive-color);
-  background-color: var(--light-gray);
-  border: 1px solid var(--input-border-inactive-color);
-  cursor: not-allowed;
-} */
+.isDisabled {
+}
 
 .btn:active {
 }
 
 .btn.isSelected {
-  background-color: var(--hover-green);
 }
